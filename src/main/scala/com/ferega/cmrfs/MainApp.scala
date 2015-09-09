@@ -1,11 +1,13 @@
 package com.ferega.cmrfs
 
 import scala.swing._
-import scala.swing.event._
+import scala.swing.event.MouseMoved
 
 object MainApp extends SimpleSwingApplication {
-  def top = new MainFrame {
+  lazy val top = new MainFrame {
+    minimumSize = new Dimension(200, 200)
+
     title = "CMRFS"
-    size = new Dimension(300, 80)
+    contents = new containers.BaseContainer()
   }
 }

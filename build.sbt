@@ -11,7 +11,7 @@ libraryDependencies ++= Seq(
 scalaVersion := "2.11.7"
 
 unmanagedSourceDirectories in Compile := (scalaSource in Compile).value :: Nil
-unmanagedResourceDirectories in Compile := Nil
+unmanagedResourceDirectories in Compile := (resourceDirectory in Compile).value :: Nil
 unmanagedSourceDirectories in Test := Nil
 unmanagedResourceDirectories in Test := Nil
 

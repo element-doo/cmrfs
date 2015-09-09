@@ -4,7 +4,9 @@ organization := "com.ferega.cmrfs"
 
 version := "0.0.0"
 
-libraryDependencies ++= Seq()
+libraryDependencies ++= Seq(
+  "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2"
+)
 
 scalaVersion := "2.11.7"
 

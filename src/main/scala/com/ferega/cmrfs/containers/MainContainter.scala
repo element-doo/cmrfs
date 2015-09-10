@@ -1,14 +1,20 @@
 package com.ferega.cmrfs.containers
 
+import javax.swing.border.BevelBorder
 import scala.swing._
 
-class MainContainer extends BorderPanel {
+object MainContainer {
   val controlContainer = new ControlContainer
-  val resultList = new ListView {
-    preferredSize = new Dimension(0, 200)
-    border = new javax.swing.border.BevelBorder(1)
-  }
   
+  val resultList = new ListView[String] {
+    preferredSize = new Dimension(0, 200)
+    border = new BevelBorder(1)
+  }
+}
+
+class MainContainer extends BorderPanel {
+  import MainContainer._
+
   layoutManager.setHgap(5)
   layoutManager.setVgap(5)
   layout(controlContainer) = BorderPanel.Position.North

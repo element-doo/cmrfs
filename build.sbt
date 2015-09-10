@@ -1,20 +1,20 @@
-name := "CMRFS"
-
-organization := "com.ferega.cmrfs"
-
+name := "cmrfs"
+organization := "hr.element.cmrfs"
 version := "0.0.0"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2"
+, "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.3-1"
+, "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
+, "ch.qos.logback" % "logback-classic" % "1.1.3"
 )
-
-scalaVersion := "2.11.7"
 
 unmanagedSourceDirectories in Compile := (scalaSource in Compile).value :: Nil
 unmanagedResourceDirectories in Compile := (resourceDirectory in Compile).value :: Nil
 unmanagedSourceDirectories in Test := Nil
 unmanagedResourceDirectories in Test := Nil
 
+scalaVersion := "2.11.7"
 scalacOptions := Seq(
   "-deprecation"
 , "-encoding", "UTF-8"

@@ -1,14 +1,19 @@
-package com.ferega.cmrfs.containers
+package hr.element.cmrfs
+package containers
 
-import javax.swing.border.BevelBorder
-import scala.swing._
+import scala.swing.event.MouseClicked
 
 object MainContainer {
   val controlContainer = new ControlContainer
-  
+
   val resultList = new ListView[String] {
-    preferredSize = new Dimension(0, 200)
     border = new BevelBorder(1)
+
+    listenTo(mouse.clicks)
+    reactions += {
+      case MouseClicked(source, _, _, clicks, _) if clicks > 1 =>
+        println(source)
+    }
   }
 }
 
@@ -18,5 +23,5 @@ class MainContainer extends BorderPanel {
   layoutManager.setHgap(5)
   layoutManager.setVgap(5)
   layout(controlContainer) = BorderPanel.Position.North
-  layout(resultList) = BorderPanel.Position.Center
+  layout(new ScrollPane(resultList)) = BorderPanel.Position.Center
 }

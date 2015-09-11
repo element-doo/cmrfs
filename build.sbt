@@ -1,6 +1,6 @@
 name := "cmrfs"
 organization := "hr.element.cmrfs"
-version := "0.0.0"
+version := "0.1.0"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-swing" % "2.0.0-M2"

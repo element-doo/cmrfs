@@ -11,5 +11,5 @@ object C {
 
   val BasePath = Path(props("basePath").replace('\\', '/'), '/')
   val FileType = props("fileType")
-  val BodyPattern = props("bodyPattern").r
+  val DatabaseEnd = props("databaseEnd")
 }

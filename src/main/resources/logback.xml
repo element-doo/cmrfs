@@ -5,7 +5,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.mentatlabs.cmrfs" level="DEBUG" />
+    <logger name="hr.element.cmrfs" level="TRACE" />
 
     <root level="INFO">
         <appender-ref ref="STDOUT" />

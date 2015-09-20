@@ -27,7 +27,13 @@ private object Searcher
 
   def readFile(path: Path): Option[FileDesc] = {
     val body = path.string(Codec.ISO8859)
-    C.BodyPattern.findFirstIn(body) map { FileDesc(path, _) }
+    logger.trace(s"Reading file: ${path.path} ...")
+    val start = body.indexOf(C.DatabaseEnd)
+    if (start != -1) {
+      Some(FileDesc(path, body.substring(start + C.DatabaseEnd.length)))
+    } else {
+      None
+    }
   }
 }
 
